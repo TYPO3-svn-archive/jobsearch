@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'jobsearch'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_jobsearch_domain_model_joboffer">Job Offer</label>
+			<label index="tx_jobsearch_domain_model_joboffer.title">Title</label>
+			<label index="tx_jobsearch_domain_model_joboffer.type">Type</label>
+			<label index="tx_jobsearch_domain_model_joboffer.description">Description</label>
+			<label index="tx_jobsearch_domain_model_joboffer.store">Store</label>
+			<label index="tx_jobsearch_domain_model_store">Store</label>
+			<label index="tx_jobsearch_domain_model_store.name">Name</label>
+			<label index="tx_jobsearch_domain_model_store.address">Address</label>
+			<label index="tx_jobsearch_domain_model_store.city">City</label>
+			<label index="tx_jobsearch_domain_model_store.contact_person">Contact Person</label>
+			<label index="tx_jobsearch_domain_model_store.email">Email</label>
+			<label index="tx_jobsearch_domain_model_store.phone">Phone</label>
+			<label index="tx_jobsearch_domain_model_store.fax">Fax</label>
+		</languageKey>
+	</data>
+</T3locallang>

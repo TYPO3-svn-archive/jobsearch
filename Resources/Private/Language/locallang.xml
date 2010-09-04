@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Job Database extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_jobsearch_domain_model_joboffer">JobOffer</label>
+			<label index="tx_jobsearch_domain_model_joboffer.title">title</label>
+			<label index="tx_jobsearch_domain_model_joboffer.type">type</label>
+			<label index="tx_jobsearch_domain_model_joboffer.description">description</label>
+			<label index="tx_jobsearch_domain_model_joboffer.store">store</label>
+			<label index="tx_jobsearch_domain_model_store">Store</label>
+			<label index="tx_jobsearch_domain_model_store.name">name</label>
+			<label index="tx_jobsearch_domain_model_store.address">address</label>
+			<label index="tx_jobsearch_domain_model_store.city">city</label>
+			<label index="tx_jobsearch_domain_model_store.contact_person">contactPerson</label>
+			<label index="tx_jobsearch_domain_model_store.email">email</label>
+			<label index="tx_jobsearch_domain_model_store.phone">phone</label>
+			<label index="tx_jobsearch_domain_model_store.fax">fax</label>
+		</languageKey>
+	</data>
+</T3locallang>
