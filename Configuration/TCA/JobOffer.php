@@ -7,10 +7,10 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 		'showRecordFieldList' => 'title,type,description,store'
 	),
 	'types' => array(
-		'1' => array('showitem' => 'title,type,description,store')
+		'1' => array('showitem' => 'title;;1,description,store')
 	),
 	'palettes' => array(
-		'1' => array('showitem' => '')
+		'1' => array('showitem' => 'type')
 	),
 	'columns' => array(
 		'sys_language_uid' => array(
@@ -94,7 +94,7 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 			'label'   => 'LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.store',
 			'config'  => array(
 				'type' => 'inline',
-				'foreign_table' => 'tx_jobsearch_domain_model_store',
+				'foreign_table' => 'tx_locator_locations',
 				'minitems' => 0,
 				'maxitems' => 1,
 				'appearance' => array(
