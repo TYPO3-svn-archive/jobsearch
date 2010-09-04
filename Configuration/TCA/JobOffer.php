@@ -73,7 +73,8 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 			'config'  => array(
 				'type' => 'select',
 				'items' => array (
-					array('-- Label --', 0),
+					array('Vollzeitstelle', 0),
+					array('Ausbildungsplatz', 1),
 				),
 				'size' => 1,
 				'maxitems' => 1,
@@ -94,6 +95,9 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 			'label'   => 'LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.store',
 			'config'  => array(
 				'type' => 'inline',
+				'items' => array(
+					array('', '')
+				),
 				'foreign_table' => 'tx_locator_locations',
 				'minitems' => 0,
 				'maxitems' => 1,

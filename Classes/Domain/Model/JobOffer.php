@@ -42,7 +42,7 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	
 	/**
 	 * type
-	 * @var select
+	 * @var string
 	 */
 	protected $type;
 	
@@ -82,7 +82,7 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	/**
 	 * Setter for type
 	 *
-	 * @param select $type type
+	 * @param string $type type
 	 * @return void
 	 */
 	public function setType($type) {
@@ -92,7 +92,7 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	/**
 	 * Getter for type
 	 *
-	 * @return select type
+	 * @return string type
 	 */
 	public function getType() {
 		return $this->type;

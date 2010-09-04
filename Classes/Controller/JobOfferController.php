@@ -32,8 +32,7 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 
-// TODO: As your extension matures, you should use Tx_Extbase_MVC_Controller_ActionController as base class, instead of the ScaffoldingController used below.
-class Tx_Jobsearch_Controller_JobOfferController extends Tx_ExtbaseKickstarter_Scaffolding_AbstractScaffoldingController {
+class Tx_Jobsearch_Controller_JobOfferController extends Tx_Extbase_MVC_Controller_ActionController {
 	
 	/**
 	 * @var Tx_Jobsearch_Domain_Repository_JobOfferRepository
@@ -48,8 +47,10 @@ class Tx_Jobsearch_Controller_JobOfferController extends Tx_ExtbaseKickstarter_S
 	protected function initializeAction() {
 		$this->jobOfferRepository = t3lib_div::makeInstance('Tx_Jobsearch_Domain_Repository_JobOfferRepository');
 	}
-	##TOKEN FOR SCAFFOLDING. Will be replaced by the necessary actions for Create, Read, Update and Delete queries by the kickstarter, when using scaffold2file.
-	# DO NOT REMOVE THIS TOKEN!##
+	
+	public function indexAction() {
+		$this->view->assign('jobOffers', $this->jobOfferRepository->findAll());
+	}
 	
 
 	

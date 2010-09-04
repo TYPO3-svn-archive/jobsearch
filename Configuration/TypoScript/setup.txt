@@ -2,7 +2,7 @@ plugin.tx_jobsearch.persistence {
 	classes {
 		Tx_Jobsearch_Domain_Model_Store {
 			mapping {
-				table = tx_locator_locations
+				tableName = tx_locator_locations
 				recordType = Tx_Jobsearch_Domain_Model_Store
 				columns {
 					storename.mapOnProperty = name

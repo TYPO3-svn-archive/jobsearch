@@ -5,10 +5,10 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	$_EXTKEY,
 	'Pi1',
 	array(
-		'JobOffer' => 'index, show, new, create, edit, update, delete',
+		'JobOffer' => 'index',
 	),
 	array(
-		'JobOffer' => 'create, update, delete',
+		'JobOffer' => '',
 	)
 );
 
