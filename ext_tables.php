@@ -36,4 +36,8 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array (
 	)
 );
 
+require_once(t3lib_extMgm::extPath($_EXTKEY) . 'Classes/UserFuncs/Locator.php');
+$TCA['tx_locator_locations']['ctrl']['label_alt'] = 'city';
+$TCA['tx_locator_locations']['ctrl']['label_userFunc'] = 'user_Tx_Jobsearch_UserFuncs_Locator->user_getLocationsLabel';
+
 ?>

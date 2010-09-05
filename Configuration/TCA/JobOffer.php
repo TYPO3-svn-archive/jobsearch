@@ -7,10 +7,11 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 		'showRecordFieldList' => 'title,type,description,store'
 	),
 	'types' => array(
-		'1' => array('showitem' => 'title;;1,description,store')
+		'1' => array('showitem' => 'title;;1,description,store;;2')
 	),
 	'palettes' => array(
-		'1' => array('showitem' => 'type')
+		'1' => array('showitem' => 'type'),
+		'2' => array('showitem' => 'city')
 	),
 	'columns' => array(
 		'sys_language_uid' => array(
@@ -67,14 +68,21 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 				'eval' => 'trim,required'
 			)
 		),
+		'city' => array(
+			'exclude' => 0,
+			'label'   => 'Ort',
+			'config'  => array(
+				'type' => 'none',
+			)
+		),
 		'type' => array(
 			'exclude' => 0,
 			'label'   => 'LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.type',
 			'config'  => array(
 				'type' => 'select',
 				'items' => array (
-					array('Vollzeitstelle', 0),
-					array('Ausbildungsplatz', 1),
+					array('Vollzeitstelle', 1),
+					array('Ausbildungsplatz', 2),
 				),
 				'size' => 1,
 				'maxitems' => 1,

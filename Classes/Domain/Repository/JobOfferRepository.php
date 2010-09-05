@@ -49,7 +49,7 @@ class Tx_Jobsearch_Domain_Repository_JobOfferRepository extends Tx_Extbase_Persi
 		
 		foreach($selectors as $selector => $value) {
 			if(in_array($selector, $this->allowedSelectors) && $value) {
-				$query->equals($selector, $value);
+				$query->matching($query->equals($selector, $value));
 			}
 		}
 		

@@ -59,6 +59,13 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	protected $store;
 	
 	
+	/**
+	 * store
+	 * @var string
+	 */
+	protected $city;
+	
+	
 	
 	/**
 	 * Setter for title
@@ -125,6 +132,7 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	 */
 	public function setStore(Tx_Jobsearch_Domain_Model_Store $store) {
 		$this->store = $store;
+		$this->setCity($store->getCity());
 	}
 
 	/**
@@ -134,6 +142,25 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	 */
 	public function getStore() {
 		return $this->store;
+	}
+	
+	/**
+	 * Setter for store
+	 *
+	 * @param Tx_Jobsearch_Domain_Model_Store $store store
+	 * @return void
+	 */
+	private function setCity($city) {
+		$this->city = $city;
+	}
+
+	/**
+	 * Getter for city
+	 *
+	 * @return string city
+	 */
+	public function getCity() {
+		return $this->city;
 	}
 	
 }
