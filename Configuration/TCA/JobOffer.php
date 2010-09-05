@@ -94,7 +94,7 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 			'exclude' => 0,
 			'label'   => 'LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.store',
 			'config'  => array(
-				'type' => 'inline',
+				'type' => 'select',
 				'items' => array(
 					array('', '')
 				),

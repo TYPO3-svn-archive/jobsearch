@@ -52,6 +52,14 @@ class Tx_Jobsearch_Controller_JobOfferController extends Tx_Extbase_MVC_Controll
 		$this->view->assign('jobOffers', $this->jobOfferRepository->findAll());
 	}
 	
+	public function ajaxSearchAction() {
+		$this->view->assign('jobOffers', $this->jobOfferRepository->findBySelectorFields());
+		$content = $this->view->render();
+		
+		// AJAX
+		echo $content;
+		die();
+	}
 
 	
 }

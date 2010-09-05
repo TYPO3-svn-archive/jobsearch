@@ -1,3 +1,26 @@
-<f:for each="{jobOffers}" as="jobOffer">
-	{jobOffer.title} bei {jobOffer.store.name} in {jobOffer.store.city}<br>
-</f:for>
+<div class="tx-jobsearch-pi1">
+	<form class="jobsearchfields" action="<f:uri.action action="ajaxSearch" />">
+
+	<select class="typeSelector" name="tx_jobsearch_pi1[joboffer][type]">
+		<option value="">Alle</option>
+		<option value="0">Vollzeitstelle</option>
+		<option value="1">Ausbildungsplatz</option>
+	</select>
+	
+	<select class="typeSelector" name="tx_jobsearch_pi1[joboffer][test]">
+		<option value="asfd">Alle</option>
+		<option value="asf">Vollzeitstelle</option>
+		<option value="asfdasg">Ausbildungsplatz</option>
+	</select>
+
+	</form>
+
+	<ul class="jobofferlist">
+	<f:for each="{jobOffers}" as="jobOffer">
+		<li id="joboffer-{jobOffer.uid}">
+			<f:link.action action="show" arguments="{jobOffer:jobOffer}">{jobOffer.title}</f:link.action>
+			bei {jobOffer.store.name} in {jobOffer.store.city}
+		</li>
+	</f:for>
+	</ul>
+</div>

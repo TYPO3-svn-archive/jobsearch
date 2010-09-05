@@ -1,18 +1,27 @@
-plugin.tx_jobsearch.persistence {
-	classes {
-		Tx_Jobsearch_Domain_Model_Store {
-			mapping {
-				tableName = tx_locator_locations
-				recordType = Tx_Jobsearch_Domain_Model_Store
-				columns {
-					storename.mapOnProperty = name
-					address.mapOnProperty = address
-					city.mapOnProperty = city
-					zipcode.mapOnProperty = zip
-					country.mapOnProperty = country
-					contactperson.mapOnProperty = contactPerson
+page.includeJS.tx_jobsearch_pi1 = typo3conf/ext/jobsearch/Resources/Public/Javascript/jobsearch.js
+
+plugin.tx_jobsearch {
+	persistence {
+		classes {
+			Tx_Jobsearch_Domain_Model_Store {
+				mapping {
+					tableName = tx_locator_locations
+					recordType = Tx_Jobsearch_Domain_Model_Store
+					columns {
+						storename.mapOnProperty = name
+						address.mapOnProperty = address
+						city.mapOnProperty = city
+						zipcode.mapOnProperty = zip
+						country.mapOnProperty = country
+						contactperson.mapOnProperty = contactPerson
+					}
 				}
 			}
 		}
 	}
+	_CSS_DEFAULT_STYLE (
+	.tx-jobsearch-pi1 .jobsearchfields {
+		display: none;
+	}
+)
 }

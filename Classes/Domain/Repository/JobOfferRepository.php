@@ -30,5 +30,31 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class Tx_Jobsearch_Domain_Repository_JobOfferRepository extends Tx_Extbase_Persistence_Repository {
+	
+	private $allowedSelectors;
+	
+	public function __construct() {
+		$this->allowedSelectors = array(
+			'type'
+		);
+		parent::__construct();
+	}
+	
+	public function findBySelectorFields() {
+		
+		$piVars = t3lib_div::_GP('tx_jobsearch_pi1');
+		$selectors = $piVars['joboffer'];
+		
+		$query = $this->createQuery();
+		
+		foreach($selectors as $selector => $value) {
+			if(in_array($selector, $this->allowedSelectors) && $value) {
+				$query->equals($selector, $value);
+			}
+		}
+		
+		return $query->execute();
+	}
+
 }
 ?>
