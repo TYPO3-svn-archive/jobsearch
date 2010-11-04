@@ -60,11 +60,17 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	
 	
 	/**
-	 * store
+	 * city
 	 * @var string
 	 */
 	protected $city;
 	
+	
+	/**
+	 * channel
+	 * @var string
+	 */
+	protected $channel;
 	
 	
 	/**
@@ -102,7 +108,12 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	 * @return string type
 	 */
 	public function getType() {
-		return $this->type;
+		switch($this->type) {
+			case 1:
+				return 'Vollzeitstelle';
+			case 2:
+				return 'Ausbildungsplatz';
+		}
 	}
 	
 	/**
@@ -145,9 +156,9 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	}
 	
 	/**
-	 * Setter for store
+	 * Setter for city
 	 *
-	 * @param Tx_Jobsearch_Domain_Model_Store $store store
+	 * @param string $city city
 	 * @return void
 	 */
 	private function setCity($city) {
@@ -161,6 +172,25 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	 */
 	public function getCity() {
 		return $this->city;
+	}
+	
+	/**
+	 * Setter for channel
+	 *
+	 * @param string $channel channel
+	 * @return void
+	 */
+	private function setChannel($channel) {
+		$this->channel = $channel;
+	}
+
+	/**
+	 * Getter for channel
+	 *
+	 * @return string channel
+	 */
+	public function getChannel() {
+		return $this->channel;
 	}
 	
 }

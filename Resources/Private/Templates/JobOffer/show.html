@@ -1,0 +1,6 @@
+{namespace j=Tx_Jobsearch_ViewHelpers}
+
+<h3>Wir suchen {jobOffer.title}</h3>
+<f:translate key="fe_offerType" />: {jobOffer.type}
+<f:format.html>{jobOffer.description}</f:format.html>
+<j:googleMap jobOffer="{jobOffer}" />

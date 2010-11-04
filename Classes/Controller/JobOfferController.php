@@ -34,10 +34,10 @@
 
 class Tx_Jobsearch_Controller_JobOfferController extends Tx_Extbase_MVC_Controller_ActionController {
 	
-	/**
-	 * @var Tx_Jobsearch_Domain_Repository_JobOfferRepository
-	 */
-	protected $jobOfferRepository;
+    /**
+     * @var Tx_Jobsearch_Domain_Repository_JobOfferRepository
+     */
+    protected $jobOfferRepository;
 
 	/**
 	 * Initializes the current action
@@ -60,7 +60,16 @@ class Tx_Jobsearch_Controller_JobOfferController extends Tx_Extbase_MVC_Controll
 		echo $content;
 		die();
 	}
-
+	
+	/**
+	 * Action that displays a single job offer
+	 *
+	 * @param Tx_Jobsearch_Domain_Model_JobOffer $jobOffer The offer to display
+	 * @return string The rendered view
+	 */
+	public function showAction(Tx_Jobsearch_Domain_Model_JobOffer $jobOffer) {
+		$this->view->assign('jobOffer', $jobOffer);
+	}
 	
 }
 ?>

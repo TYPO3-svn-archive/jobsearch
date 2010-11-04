@@ -35,7 +35,7 @@ class Tx_Jobsearch_Domain_Repository_JobOfferRepository extends Tx_Extbase_Persi
 	
 	public function __construct() {
 		$this->allowedSelectors = array(
-			'type'
+			'type', 'city', 'channel'
 		);
 		parent::__construct();
 	}
@@ -47,13 +47,19 @@ class Tx_Jobsearch_Domain_Repository_JobOfferRepository extends Tx_Extbase_Persi
 		
 		$query = $this->createQuery();
 		
+		$constraint = null;
 		foreach($selectors as $selector => $value) {
 			if(in_array($selector, $this->allowedSelectors) && $value) {
-				$query->matching($query->equals($selector, $value));
+				if($constraint == null) {
+					$constraint = $query->equals($selector, $value);
+				} else {
+					$constraint = $query->logicalAnd($constraint, $query->equals($selector, $value));
+				}
 			}
 		}
 		
-		return $query->execute();
+		return $query->matching($constraint)->execute();
+		
 	}
 
 }

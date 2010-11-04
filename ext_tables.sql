@@ -5,9 +5,10 @@ CREATE TABLE tx_jobsearch_domain_model_joboffer (
 	
 	title tinytext,
 	type int(11) DEFAULT '0' NOT NULL,
-	description tinytext,
+	description text,
 	store int(11) unsigned DEFAULT '0',
 	city tinytext,
+	channel tinytext,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

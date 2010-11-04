@@ -19,6 +19,23 @@
 			<label index="tx_jobsearch_domain_model_store.email">email</label>
 			<label index="tx_jobsearch_domain_model_store.phone">phone</label>
 			<label index="tx_jobsearch_domain_model_store.fax">fax</label>
+			<label index="fe_offerType">Offer Type</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_jobsearch_domain_model_joboffer">Stellenangebot</label>
+			<label index="tx_jobsearch_domain_model_joboffer.title">title</label>
+			<label index="tx_jobsearch_domain_model_joboffer.type">type</label>
+			<label index="tx_jobsearch_domain_model_joboffer.description">description</label>
+			<label index="tx_jobsearch_domain_model_joboffer.store">store</label>
+			<label index="tx_jobsearch_domain_model_store">Store</label>
+			<label index="tx_jobsearch_domain_model_store.name">name</label>
+			<label index="tx_jobsearch_domain_model_store.address">address</label>
+			<label index="tx_jobsearch_domain_model_store.city">city</label>
+			<label index="tx_jobsearch_domain_model_store.contact_person">contactPerson</label>
+			<label index="tx_jobsearch_domain_model_store.email">email</label>
+			<label index="tx_jobsearch_domain_model_store.phone">phone</label>
+			<label index="tx_jobsearch_domain_model_store.fax">fax</label>
+			<label index="fe_offerType">Art der Stelle</label>
 		</languageKey>
 	</data>
 </T3locallang>

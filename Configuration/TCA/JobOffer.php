@@ -7,11 +7,11 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 		'showRecordFieldList' => 'title,type,description,store'
 	),
 	'types' => array(
-		'1' => array('showitem' => 'title;;1,description,store;;2')
+		'1' => array('showitem' => 'title;;1,description;;;richtext[]:rte_transform[mode=ts_css],store;;2')
 	),
 	'palettes' => array(
 		'1' => array('showitem' => 'type'),
-		'2' => array('showitem' => 'city')
+		'2' => array('showitem' => 'channel,city')
 	),
 	'columns' => array(
 		'sys_language_uid' => array(
@@ -73,6 +73,20 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 			'label'   => 'Ort',
 			'config'  => array(
 				'type' => 'none',
+				'size' => '20'
+			)
+		),
+		'channel' => array(
+			'exclude' => 0,
+			'label'   => 'Vertriebslinie',
+			'config'  => array(
+				'type' => 'select',
+				'items' => array(
+					array('', ''),
+					array('coop', 'coop'),
+					array('plaza', 'plaza'),
+					array('sky', 'sky')
+				)
 			)
 		),
 		'type' => array(
@@ -93,9 +107,7 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 			'exclude' => 0,
 			'label'   => 'LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.description',
 			'config'  => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
+				'type' => 'text',
 			)
 		),
 		'store' => array(

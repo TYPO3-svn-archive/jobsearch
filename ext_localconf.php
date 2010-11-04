@@ -5,7 +5,7 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	$_EXTKEY,
 	'Pi1',
 	array(
-		'JobOffer' => 'index, ajaxSearch',
+		'JobOffer' => 'index, ajaxSearch, show',
 	),
 	array(
 		'JobOffer' => '',

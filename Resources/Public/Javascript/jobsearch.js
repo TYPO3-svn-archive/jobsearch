@@ -2,6 +2,7 @@ $(function() {
 
 	var jobsearchForm = $('.tx-jobsearch-pi1').find('.jobsearchfields');
 	var jobOfferList = $('.tx-jobsearch-pi1').find('.jobofferlist');
+	var noJobsMessage = $('.tx-jobsearch-pi1').find('.message-nojobs');
 	var jobsearchAjaxSelectors = jobsearchForm.find('select');
 	
 	var url = jobsearchForm.attr('action');
@@ -19,6 +20,7 @@ $(function() {
 		jobOfferList.removeClass('ajax-waiting');
 	}
 	
+	noJobsMessage.hide();
 	
 	jobsearchForm.show();
 	jobsearchAjaxSelectors.each(function(){
@@ -39,6 +41,12 @@ $(function() {
 				$(resultIds).each(function(){
 					jobOfferList.find('li#joboffer-' + this).show();
 				});
+				//console.log($(resultIds)[0]);
+				if($(resultIds)[0] == '') {
+					noJobsMessage.show();
+				} else {
+					noJobsMessage.hide();
+				}
 				
 				hideAjaxWaitingMode();
 			});

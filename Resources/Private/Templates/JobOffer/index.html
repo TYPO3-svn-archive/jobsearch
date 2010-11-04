@@ -1,17 +1,25 @@
 <div class="tx-jobsearch-pi1">
 	<form class="jobsearchfields" action="<f:uri.action action="ajaxSearch" />">
 
-	<select class="typeSelector" name="tx_jobsearch_pi1[joboffer][type]">
-		<option value="">Alle</option>
-		<option value="1">Vollzeitstelle</option>
-		<option value="2">Ausbildungsplatz</option>
-	</select>
-	
-	<select class="typeSelector" name="tx_jobsearch_pi1[joboffer][city]">
-		<option value="asfd">Alle</option>
-		<option value="asf">Vollzeitstelle</option>
-		<option value="asfdasg">Ausbildungsplatz</option>
-	</select>
+		Art der Stelle: <select class="typeSelector" name="tx_jobsearch_pi1[joboffer][type]">
+			<option value="">Alle</option>
+			<option value="1">Vollzeitstelle</option>
+			<option value="2">Ausbildungsplatz</option>
+		</select><br />
+		
+		Ort: <select class="typeSelector" name="tx_jobsearch_pi1[joboffer][city]">
+			<option value="">Alle</option>
+			<f:groupedFor each="{jobOffers}" as="jobsPerCity" groupBy="city" groupKey="city">
+				<option value="{city}">{city}</option>
+			</f:groupedFor>
+		</select><br />
+		
+		Vertriebskanal: <select class="typeSelector" name="tx_jobsearch_pi1[joboffer][channel]">
+			<option value="">Alle</option>
+			<f:groupedFor each="{jobOffers}" as="jobsPerChannel" groupBy="channel" groupKey="channel">
+				<option value="{channel}">{channel}</option>
+			</f:groupedFor>
+		</select><br />
 
 	</form>
 
@@ -19,8 +27,10 @@
 	<f:for each="{jobOffers}" as="jobOffer">
 		<li id="joboffer-{jobOffer.uid}">
 			<f:link.action action="show" arguments="{jobOffer:jobOffer}">{jobOffer.title}</f:link.action>
-			bei {jobOffer.store.name} in {jobOffer.store.city}
+			bei {jobOffer.channel} in {jobOffer.city}
 		</li>
 	</f:for>
 	</ul>
+	
+	<div class="message-nojobs">Für Ihre Anfrage sind derzeit keine Stellenangebote verfügbar.</div>
 </div>
