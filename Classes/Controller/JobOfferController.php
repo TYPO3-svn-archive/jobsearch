@@ -49,7 +49,12 @@ class Tx_Jobsearch_Controller_JobOfferController extends Tx_Extbase_MVC_Controll
 	}
 	
 	public function indexAction() {
-		$this->view->assign('jobOffers', $this->jobOfferRepository->findAll());
+		if($this->settings['typesToShow']) {
+			$offers = $this->jobOfferRepository->findByJobTypes($this->settings['typesToShow']);
+		} else {
+			$offers = $this->jobOfferRepository->findAll();
+		}
+		$this->view->assign('jobOffers',$offers);
 	}
 	
 	public function ajaxSearchAction() {
@@ -69,6 +74,19 @@ class Tx_Jobsearch_Controller_JobOfferController extends Tx_Extbase_MVC_Controll
 	 */
 	public function showAction(Tx_Jobsearch_Domain_Model_JobOffer $jobOffer) {
 		$this->view->assign('jobOffer', $jobOffer);
+		$this->view->assign('nextDay', $this->getNextDay());
+	}
+
+	private function getNextDay() {
+		$timestampNextDay = mktime(
+			0,				// hour
+			0,				// minute
+			0,				// second
+			date('n'),		// month
+			date('j')+1,	// day
+			date('Y')
+		);
+		return new DateTime(date('Y-m-d', $timestampNextDay));
 	}
 	
 }

@@ -40,6 +40,41 @@ class Tx_Jobsearch_Domain_Repository_JobOfferRepository extends Tx_Extbase_Persi
 		parent::__construct();
 	}
 	
+	/**
+	 *
+	 * @param string $jobTypes Comma-separated list of Job-Types (ids)
+	 */
+	public function findByJobTypes ($jobTypes) {
+		
+		$query = $this->createQuery();
+		
+		/**
+		 * // ATTENTION: After you updated this TYPO3 setup to 4.4 or higher please activate the following lines:
+		 * 
+		 * 
+		 * $constraint = $query->in('type', explode(',', $jobTypes));
+		 * return $query->matching($constraint)->execute();
+		 * 
+		 * 
+		 * // AND delete all the lines below in this function. This will make this extension future proof for FLOW3!
+		 */
+
+		if(t3lib_div::compat_version('4.4')) {
+
+			t3lib_div::deprecationLog('Please have a look at Tx_Jobsearch_Domain_Repository_JobOfferRepository->findByJobTypes()! You\'ll find further instructions.');
+			$constraint = $query->in('type', explode(',', $jobTypes));
+			$query->matching($constraint);
+
+		} else {
+
+			$where = 'deleted = 0 AND hidden = 0 AND (endtime = 0 OR endtime > ' . time() . ') AND starttime < ' . time();
+			$query->statement('SELECT * FROM tx_jobsearch_domain_model_joboffer WHERE ' . $where);
+
+		}
+
+		return $query->execute();
+	}
+
 	public function findBySelectorFields() {
 		
 		$piVars = t3lib_div::_GP('tx_jobsearch_pi1');

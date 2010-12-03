@@ -1,3 +1,7 @@
+{namespace j=Tx_Jobsearch_ViewHelpers}
+
+<j:searchFormJs />
+
 <div class="tx-jobsearch-pi1">
 	<form class="jobsearchfields" action="<f:uri.action action="ajaxSearch" />">
 
@@ -26,7 +30,9 @@
 	<ul class="jobofferlist">
 	<f:for each="{jobOffers}" as="jobOffer">
 		<li id="joboffer-{jobOffer.uid}">
-			<f:link.action action="show" arguments="{jobOffer:jobOffer}">{jobOffer.title}</f:link.action>
+			<f:link.action action="show" arguments="{jobOffer:jobOffer}" pageUid="{settings.jobsingle}">
+				{jobOffer.title}
+			</f:link.action>
 			bei {jobOffer.channel} in {jobOffer.city}
 		</li>
 	</f:for>

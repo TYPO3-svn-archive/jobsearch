@@ -1,6 +1,9 @@
 plugin.tx_jobsearch {
 
 	#cat=Jobsearch/other/a; type=string; label=Google Maps API Key:Get one at http://code.google.com/apis/maps/signup.html
-	GMapsAPIKey = 
+	GMapsAPIKey =
+
+	#cat=Jobsearch/other/c; type=int; label= Job single pid
+    jobsingle = 0
 
 }

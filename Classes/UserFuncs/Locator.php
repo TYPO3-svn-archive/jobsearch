@@ -6,7 +6,10 @@ class user_Tx_Jobsearch_UserFuncs_Locator {
 	
 		$row = t3lib_BEfunc::getRecord('tx_locator_locations', $params['row']['uid']);
 		$params['title'] = $row['storename'] . ' (' . $row['city'] . ')';
-	
+		if($row['storeid']) {
+			$params['title'] .= ' Filiale #' .  $row['storeid'];
+		}
+
 	}
 
 }

@@ -20,6 +20,9 @@
 			<label index="tx_jobsearch_domain_model_store.phone">phone</label>
 			<label index="tx_jobsearch_domain_model_store.fax">fax</label>
 			<label index="fe_offerType">Offer Type</label>
+			<label index="fe_jobstart1">Start date</label>
+			<label index="fe_jobstart2">Start date</label>
+			<label index="fe_endtime">Endtime</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="tx_jobsearch_domain_model_joboffer">Stellenangebot</label>
@@ -36,6 +39,9 @@
 			<label index="tx_jobsearch_domain_model_store.phone">phone</label>
 			<label index="tx_jobsearch_domain_model_store.fax">fax</label>
 			<label index="fe_offerType">Art der Stelle</label>
+			<label index="fe_jobstart1">Arbeitsbeginn</label>
+			<label index="fe_jobstart2">Ausbildungsbeginn</label>
+			<label index="fe_endtime">Ende der Bewerbungsfrist</label>
 		</languageKey>
 	</data>
 </T3locallang>

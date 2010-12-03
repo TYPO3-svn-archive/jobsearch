@@ -86,6 +86,18 @@ class Tx_Jobsearch_Domain_Model_Store extends Tx_Extbase_DomainObject_AbstractEn
 	 * @var string
 	 */
 	protected $zip;
+
+	/**
+	 * lat
+	 * @var float
+	 */
+	protected $lat;
+
+	/**
+	 * lon
+	 * @var float
+	 */
+	protected $lon;
 	
 	/**
 	 * Setter for address
@@ -142,6 +154,44 @@ class Tx_Jobsearch_Domain_Model_Store extends Tx_Extbase_DomainObject_AbstractEn
 	 */
 	public function getZip() {
 		return $this->zip;
+	}
+
+	/**
+	 * Setter for lat
+	 *
+	 * @param float $lat lat
+	 * @return void
+	 */
+	public function setLat($lat) {
+		$this->lat = $lat;
+	}
+
+	/**
+	 * Getter for lat
+	 *
+	 * @return string lat
+	 */
+	public function getLat() {
+		return $this->lat;
+	}
+
+	/**
+	 * Setter for lon
+	 *
+	 * @param string $lon lon
+	 * @return void
+	 */
+	public function setLon($lon) {
+		$this->lon = $lon;
+	}
+
+	/**
+	 * Getter for lon
+	 *
+	 * @return string lon
+	 */
+	public function getLon() {
+		return $this->lon;
 	}
 	
 	/**

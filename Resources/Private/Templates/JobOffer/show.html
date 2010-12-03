@@ -1,6 +1,38 @@
 {namespace j=Tx_Jobsearch_ViewHelpers}
 
-<h3>Wir suchen {jobOffer.title}</h3>
-<f:translate key="fe_offerType" />: {jobOffer.type}
+<h3>
+	Wir suchen
+	<f:if condition="{jobOffer.amount} > 1">{jobOffer.amount}</f:if>
+	{jobOffer.title}
+</h3>
+
+<f:translate key="fe_offerType" />: {jobOffer.type}<br />
+
+<f:translate key="fe_jobstart{jobOffer.typeNumber}" />:
+<f:if condition="{jobOffer.jobstart.timestamp} < {nextDay.timestamp}">
+	<f:then>
+		sofort
+	</f:then>
+	<f:else>
+		<f:format.date format="d.m.Y">{jobOffer.jobstart}</f:format.date>
+	</f:else>
+</f:if><br />
+
+<f:if condition="{jobOffer.endtime.timestamp}">
+	<f:translate key="fe_endtime" />: <f:format.date format="d.m.Y">{jobOffer.endtime}</f:format.date>
+</f:if>
+
+<h4>Beschreibung</h4>
 <f:format.html>{jobOffer.description}</f:format.html>
-<j:googleMap jobOffer="{jobOffer}" />
+
+<f:if condition="{jobOffer.requirements}">
+	<h4>Voraussetzungen</h4>
+	<f:format.html>{jobOffer.requirements}</f:format.html>
+</f:if>
+
+<f:if condition="{jobOffer.more}">
+	<h4>Weitere Informationen</h4>
+	<f:format.html>{jobOffer.more}</f:format.html>
+</f:if>
+
+<f:render partial="map" arguments="{jobOffer : jobOffer}" />

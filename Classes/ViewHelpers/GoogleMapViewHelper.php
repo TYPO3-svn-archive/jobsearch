@@ -41,8 +41,41 @@ class Tx_Jobsearch_ViewHelpers_GoogleMapViewHelper extends Tx_Fluid_Core_ViewHel
 	 * @return string Code to display a Google Map
 	 */
 	public function render(Tx_Jobsearch_Domain_Model_JobOffer $jobOffer) {
-		$content = 'Google Map for ' . $jobOffer->getTitle() . ' goes here..';
-		return $content;
+		$GLOBALS['TSFE']->additionalHeaderData[] = '
+			<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+			<script type="text/javascript" src="' . t3lib_extMgm::siteRelPath('jobsearch') . 'Resources/Public/Javascript/gmap3.js"></script>
+			<script type="text/javascript" src="' . t3lib_extMgm::siteRelPath('jobsearch') . 'Resources/Public/Javascript/map.js"></script>
+			<script type="text/javascript">
+				$(function(){
+
+					$.gmap3.setDefault({
+						init:{
+							center:{
+								lat: 54.3,
+								lng: 9.6
+							},
+							zoom: 14
+						}
+					});
+
+					var coords = new google.maps.LatLng(' . $jobOffer->getStore()->getLat() . ', ' . $jobOffer->getStore()->getLon() . ');
+					$("#map_canvas").gmap3(
+						{
+							action: ":addMarker",
+							args:{
+								latLng: coords,
+								map:{
+									center: true
+								}
+							}
+						},
+						{
+							action: "enableScrollWheelZoom"
+						}
+					);
+				});
+			</script>
+		';
 	}
 }
 

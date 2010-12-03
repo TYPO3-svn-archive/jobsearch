@@ -1,0 +1,54 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Verhalten</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Standardaktion des Plugins</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">Suchmaske</numIndex>
+										<numIndex index="1"><![CDATA[JobOffer->index;JobOffer->ajaxSearch]]></numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">Einzelansicht</numIndex>
+										<numIndex index="1"><![CDATA[JobOffer->show]]></numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+					<settings.typesToShow>
+						<TCEforms>
+							<label>Anzuzeigende Job-Typen</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">Alle</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">Vollzeitstelle</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">Ausbildungsplatz</numIndex>
+										<numIndex index="1">2</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.typesToShow>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

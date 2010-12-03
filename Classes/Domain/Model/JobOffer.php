@@ -39,6 +39,24 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	 * @validate NotEmpty
 	 */
 	protected $title;
+
+	/**
+	 * amount
+	 * @var string
+	 */
+	protected $amount;
+
+	/**
+	 * Job Start date
+	 * @var integer
+	 */
+	protected $jobstart;
+
+	/**
+	 * Job endtime
+	 * @var integer
+	 */
+	protected $endtime;
 	
 	/**
 	 * type
@@ -51,6 +69,18 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	 * @var string
 	 */
 	protected $description;
+
+	/**
+	 * requirements
+	 * @var string
+	 */
+	protected $requirements;
+
+	/**
+	 * more
+	 * @var string
+	 */
+	protected $more;
 	
 	/**
 	 * store
@@ -91,6 +121,63 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	public function getTitle() {
 		return $this->title;
 	}
+
+	/**
+	 * Setter for amount
+	 *
+	 * @param integer $amount amount
+	 * @return void
+	 */
+	public function setAmount($amount) {
+		$this->amount = $amount;
+	}
+
+	/**
+	 * Getter for amount
+	 *
+	 * @return integer amount
+	 */
+	public function getAmount() {
+		return $this->amount;
+	}
+
+	/**
+	 * Setter for the job start date
+	 *
+	 * @param integer $jobstart jobstart
+	 * @return void
+	 */
+	public function setJobstart($jobstart) {
+		$this->jobstart = $jobstart;
+	}
+
+	/**
+	 * Getter for the job start date
+	 *
+	 * @return integer job start date
+	 */
+	public function getJobstart() {
+		return new DateTime(date('Y-m-d', $this->jobstart));
+	}
+
+	/**
+	 * Setter for endtime
+	 *
+	 * @param integer $endtime endtime
+	 * @return void
+	 */
+	public function setEndtime($endtime) {
+		$this->endtime = $endtime;
+	}
+
+	/**
+	 * Getter for endtime
+	 *
+	 * @return integer endtime
+	 */
+	public function getEndtime() {
+		return new DateTime(date('Y-m-d', $this->endtime));
+	}
 	
 	/**
 	 * Setter for type
@@ -115,6 +202,15 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 				return 'Ausbildungsplatz';
 		}
 	}
+
+	/**
+	 * Getter for type
+	 *
+	 * @return string type
+	 */
+	public function getTypeNumber() {
+		return $this->type;
+	}
 	
 	/**
 	 * Setter for description
@@ -133,6 +229,44 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	 */
 	public function getDescription() {
 		return $this->description;
+	}
+
+	/**
+	 * Setter for requirements
+	 *
+	 * @param string $requirements requirements
+	 * @return void
+	 */
+	public function setRequirements($requirements) {
+		$this->requirements = $requirements;
+	}
+
+	/**
+	 * Getter for requirements
+	 *
+	 * @return string requirements
+	 */
+	public function getRequirements() {
+		return $this->requirements;
+	}
+
+	/**
+	 * Setter for more
+	 *
+	 * @param string $more more
+	 * @return void
+	 */
+	public function setMore($more) {
+		$this->more = $more;
+	}
+
+	/**
+	 * Getter for more
+	 *
+	 * @return string more
+	 */
+	public function getMore() {
+		return $this->more;
 	}
 	
 	/**
@@ -191,6 +325,10 @@ class Tx_Jobsearch_Domain_Model_JobOffer extends Tx_Extbase_DomainObject_Abstrac
 	 */
 	public function getChannel() {
 		return $this->channel;
+	}
+
+	public function  __toString() {
+		return $this->getTitle();
 	}
 	
 }

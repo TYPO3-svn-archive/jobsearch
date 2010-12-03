@@ -10,15 +10,26 @@
 			<label index="tx_jobsearch_domain_model_joboffer.title">Title</label>
 			<label index="tx_jobsearch_domain_model_joboffer.type">Type</label>
 			<label index="tx_jobsearch_domain_model_joboffer.description">Description</label>
+			<label index="tx_jobsearch_domain_model_joboffer.requirements">Requirements</label>
+			<label index="tx_jobsearch_domain_model_joboffer.more">More Information</label>
 			<label index="tx_jobsearch_domain_model_joboffer.store">Store</label>
-			<label index="tx_jobsearch_domain_model_store">Store</label>
-			<label index="tx_jobsearch_domain_model_store.name">Name</label>
-			<label index="tx_jobsearch_domain_model_store.address">Address</label>
-			<label index="tx_jobsearch_domain_model_store.city">City</label>
-			<label index="tx_jobsearch_domain_model_store.contact_person">Contact Person</label>
-			<label index="tx_jobsearch_domain_model_store.email">Email</label>
-			<label index="tx_jobsearch_domain_model_store.phone">Phone</label>
-			<label index="tx_jobsearch_domain_model_store.fax">Fax</label>
+			<label index="tx_jobsearch_domain_model_joboffer.endtime">End of Application period</label>
+			<label index="tx_jobsearch_domain_model_joboffer.general">General</label>
+			<label index="tx_jobsearch_domain_model_joboffer.jobstart">Job start date</label>
+			<label index="tx_jobsearch_domain_model_joboffer.amount">Amount of Jobs offered</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_jobsearch_domain_model_joboffer">Jobangebot</label>
+			<label index="tx_jobsearch_domain_model_joboffer.title">Titel</label>
+			<label index="tx_jobsearch_domain_model_joboffer.type">Typ</label>
+			<label index="tx_jobsearch_domain_model_joboffer.description">Beschreibung</label>
+			<label index="tx_jobsearch_domain_model_joboffer.requirements">Voraussetzungen</label>
+			<label index="tx_jobsearch_domain_model_joboffer.more">Mehr Informationen</label>
+			<label index="tx_jobsearch_domain_model_joboffer.store">Geschäftsstelle</label>
+			<label index="tx_jobsearch_domain_model_joboffer.endtime">Ende der Bewerbungsfrist</label>
+			<label index="tx_jobsearch_domain_model_joboffer.general">Allgemein</label>
+			<label index="tx_jobsearch_domain_model_joboffer.jobstart">Arbeitsbeginn</label>
+			<label index="tx_jobsearch_domain_model_joboffer.amount">Anzahl der angeboteten Stellen</label>
 		</languageKey>
 	</data>
 </T3locallang>

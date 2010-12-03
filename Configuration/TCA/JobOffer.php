@@ -7,11 +7,21 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 		'showRecordFieldList' => 'title,type,description,store'
 	),
 	'types' => array(
-		'1' => array('showitem' => 'title;;1,description;;;richtext[]:rte_transform[mode=ts_css],store;;2')
+		'1' => array('showitem' => '
+			--div--;LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.general,
+				title;;1,type;;2,store;;3,
+			--div--;LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.description,
+				description;;;richtext[]:rte_transform[mode=ts_css],
+			--div--;LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.requirements,
+				requirements;;;richtext[]:rte_transform[mode=ts_css],
+			--div--;LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.more,
+				more;;;richtext[]:rte_transform[mode=ts_css]
+			')
 	),
 	'palettes' => array(
-		'1' => array('showitem' => 'type'),
-		'2' => array('showitem' => 'channel,city')
+		'1' => array('showitem' => 'hidden,starttime,endtime,jobstart'),
+		'2' => array('showitem' => 'amount'),
+		'3' => array('showitem' => 'channel,city')
 	),
 	'columns' => array(
 		'sys_language_uid' => array(
@@ -59,6 +69,54 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 				'type' => 'check'
 			)
 		),
+		'starttime' => array (		
+			'exclude' => 1,
+			'label'   => 'LLL:EXT:lang/locallang_general.xml:LGL.starttime',
+			'config'  => array (
+				'type'     => 'input',
+				'size'     => '8',
+				'max'      => '20',
+				'eval'     => 'date',
+				'checkbox' => '0',
+				'default'  => '0',
+				'range'    => array (
+					'upper' => mktime(0, 0, 0, 12, 31, 2020),
+					'lower' => mktime(0, 0, 0, date('m')-1, date('d'), date('Y'))
+				)
+			)
+		),
+		'endtime' => array (
+			'exclude' => 1,
+			'label'   => 'LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.endtime',
+			'config'  => array (
+				'type'     => 'input',
+				'size'     => '8',
+				'max'      => '20',
+				'eval'     => 'date',
+				'checkbox' => '0',
+				'default'  => '0',
+				'range'    => array (
+					'upper' => mktime(0, 0, 0, 12, 31, 2020),
+					'lower' => mktime(0, 0, 0, date('m')-1, date('d'), date('Y'))
+				)
+			)
+		),
+		'jobstart' => array (
+			'exclude' => 1,
+			'label'   => 'LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.jobstart',
+			'config'  => array (
+				'type'     => 'input',
+				'size'     => '8',
+				'max'      => '20',
+				'eval'     => 'date',
+				'checkbox' => '0',
+				'default'  => '0',
+				'range'    => array (
+					'upper' => mktime(0, 0, 0, 12, 31, 2020),
+					'lower' => mktime(0, 0, 0, date('m')-1, date('d'), date('Y'))
+				)
+			)
+		),
 		'title' => array(
 			'exclude' => 0,
 			'label'   => 'LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.title',
@@ -66,6 +124,16 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim,required'
+			)
+		),
+		'amount' => array(
+			'exclude' => 0,
+			'label'   => 'LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.amount',
+			'config'  => array(
+				'type' => 'input',
+				'size' => 5,
+				'eval' => 'int',
+				'default' => 1
 			)
 		),
 		'city' => array(
@@ -106,6 +174,20 @@ $TCA['tx_jobsearch_domain_model_joboffer'] = array(
 		'description' => array(
 			'exclude' => 0,
 			'label'   => 'LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.description',
+			'config'  => array(
+				'type' => 'text',
+			)
+		),
+		'requirements' => array(
+			'exclude' => 0,
+			'label'   => 'LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.requirements',
+			'config'  => array(
+				'type' => 'text',
+			)
+		),
+		'more' => array(
+			'exclude' => 0,
+			'label'   => 'LLL:EXT:jobsearch/Resources/Private/Language/locallang_db.xml:tx_jobsearch_domain_model_joboffer.more',
 			'config'  => array(
 				'type' => 'text',
 			)
