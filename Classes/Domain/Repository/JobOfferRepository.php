@@ -35,7 +35,7 @@ class Tx_Jobsearch_Domain_Repository_JobOfferRepository extends Tx_Extbase_Persi
 	
 	public function __construct() {
 		$this->allowedSelectors = array(
-			'type', 'city', 'channel'
+			'type', 'city', 'channel', 'title'
 		);
 		parent::__construct();
 	}

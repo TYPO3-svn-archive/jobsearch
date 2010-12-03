@@ -25,6 +25,13 @@
 			</f:groupedFor>
 		</select><br />
 
+		Beruf: <select class="typeSelector" name="tx_jobsearch_pi1[joboffer][title]">
+			<option value="">Alle</option>
+			<f:groupedFor each="{jobOffers}" as="jobsPerTitle" groupBy="title" groupKey="title">
+				<option value="{title}">{title}</option>
+			</f:groupedFor>
+		</select><br />
+
 	</form>
 
 	<ul class="jobofferlist">
